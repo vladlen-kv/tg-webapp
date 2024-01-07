@@ -105,21 +105,21 @@
         });
 
         order.addEventListener("click", () => {
-            document.getElementById("error").innerText = ''; 
+            document.getElementById("error").innerText = ' ';
             let name = document.getElementById("user_name").value;
             let email = document.getElementById("user_email").value;
             let phone = document.getElementById("user_phone").value;
             if(name.lenght < 5) {
                 document.getElementById("error").innerText = 'Ошибка в имени';
-                return
+                return;
             }
             if(email.lenght < 5) {
                 document.getElementById("error").innerText = 'Ошибка в email';
-                return
+                return;
             }
             if(phone.lenght < 5) {
                 document.getElementById("error").innerText = 'Ошибка в телефоне';
-                return
+                return;
             }
 
             let data = {
@@ -129,7 +129,7 @@
             }
             tg.sendData(JSON.stringify(data));
             tg.sendData('');
-            
+
             tg.close();
         });
 
